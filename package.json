@@ -1,0 +1,46 @@
+{
+  "name": "mf2",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "start": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi generate tmp",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "serve": "serve dist -p 3100",
+    "test:coverage": "umi-test --coverage"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/pro-layout": "^6.5.0",
+    "@umijs/preset-react": "1.x",
+    "install": "^0.13.0",
+    "antd": "^4.23.4",
+    "umi": "^3.5.0",
+    "umi-plugin-mf-bootstrap": "^0.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "yarn": "^1.22.10"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@umijs/test": "^3.5.0",
+    "lint-staged": "^10.0.7",
+    "prettier": "^2.2.0",
+    "serve": "11.3.2",
+    "typescript": "^4.1.2",
+    "yorkie": "^2.0.0"
+  }
+}
